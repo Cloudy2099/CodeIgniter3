@@ -160,7 +160,6 @@ class auth extends CI_Controller
                     $update_otp = $this->db->query("UPDATE user SET code = $code, status = '$status' WHERE code = $fetch_code");
                     if ($update_otp) {
                         $this->session->set_flashdata('success', 'Akun anda berhasil didaftarkan <br> Terimakasih ');
-                        $_SESSION['email'] = $email;
                         redirect('auth/otp');
                     } else {
                         $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert"> Gagal dalam mengambil data </div>');
